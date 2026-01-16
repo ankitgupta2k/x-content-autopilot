@@ -1,0 +1,29 @@
+meta:
+  project: "x-content-autopilot"
+  timezone: "Europe/Berlin"
+  version: "0.1"
+
+schedule:
+  autopublish: false
+  max_posts_per_day: 1
+
+content:
+  language: "en"
+  topic_rotation:
+    - "AI & automation"
+    - "systems thinking"
+    - "career & leadership"
+    - "life lessons"
+  formats:
+    - "short"
+  constraints:
+    max_chars: 260
+    hashtags_max: 3
+
+output:
+  add_hashtags: true
+  cta_style: "question"
+  hashtags:
+    - "automation"
+    - "AI"
+    - "buildinpublic"

@@ -1,0 +1,4 @@
+data/posts.json
+__pycache__/
+*.pyc
+data/posts.json
