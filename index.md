@@ -1,42 +1,82 @@
 ---
-title: Ideas → Impact
+title: x-content-autopilot
 ---
 
-# Ideas → Impact
+# x-content-autopilot
 
-I build practical, shippable solutions that turn real-world ideas into working systems.
+An **AI-driven daily content autopilot for X (Twitter)**.
 
-This repo is the **hub** — a simple index of projects and what they’re trying to solve.
-
----
-
-## Projects
-
-### 🚧 x-content-autopilot
-**AI-driven daily X content autopilot** — generates posts from a ruleset + prompt templates, applies guardrails (length, tone, duplicates), then posts/schedules and logs results.
-
-- Repo: https://github.com/ankitgupta2k/x-content-autopilot
-- Status: In progress
+It turns your **ruleset + prompt templates** into high-quality posts, applies guardrails, then **schedules/posts** and **logs** everything so the system improves over time.
 
 ---
 
-## What you’ll find here
-- Project links + short context
-- Roadmaps and “why” behind each build
-- An “Ideas → Impact” approach: fewer demos, more usable systems
+## Why this exists
+Most content automation ends up sounding generic—or worse, spammy.  
+This project aims for **safe, consistent, brand-aligned output**:
+
+- predictable cadence
+- consistent voice
+- low repetition
+- measurable improvement
 
 ---
 
-## Principles
-- Build for reliability first
-- Keep automation safe and compliant
-- Measure outcomes and iterate (reach, engagement, learning)
+## What it does
+
+### 1) Generate
+- Selects a topic + format from your rotation
+- Produces 2–3 candidate posts (single post or thread)
+
+### 2) Validate (Guardrails)
+- X-safe length limits
+- Hashtag and CTA limits
+- Banned phrases / tone checks
+- Duplicate/similarity check vs recent posts
+
+### 3) Publish
+- **Dry-run mode:** generate + log only
+- **Auto mode:** schedule/post automatically
+- **Approval mode (optional):** send draft for one-click approval
+
+Publishing options:
+- Typefully API (simpler scheduling)
+- Direct X API (full control)
+
+### 4) Log
+Stores post text + metadata (date, topic, format, score) to enable weekly review and iteration.
 
 ---
 
-## Links
-- GitHub: https://github.com/ankitgupta2k
-- X: (add your link)
-- Medium: (add your link)
+## Single Source of Truth
+Configuration lives in:
+- `config/autopilot.yaml`
+
+This file controls cadence, topic rotation, guardrails, CTAs, hashtags, and publishing mode.
+
+---
+
+## Planned structure
+- config/ # autopilot.yaml (single source of truth)
+- src/ # generate/validate/publish pipeline
+- data/ # post history for duplicate checks
+- .github/workflows # daily scheduler (GitHub Actions)
+
+
+---
+
+## Roadmap
+- [ ] Config v1 (`config/autopilot.yaml`)
+- [ ] Generator + validator (dry-run)
+- [ ] Duplicate checker (last 30 posts)
+- [ ] Daily GitHub Actions schedule
+- [ ] Posting via Typefully / X API
+- [ ] Logging + weekly performance summary
+- [ ] Optional approval workflow
+
+---
+
+## Safety / compliance
+No auto-follow/unfollow. Keep cadence human-like (start with 1 post/day). Add approval mode until the voice is stable.
 
 _Last updated: Jan 2026_
+
